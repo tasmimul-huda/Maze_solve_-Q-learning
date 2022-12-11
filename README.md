@@ -1,5 +1,7 @@
 # Maze_solve_-Q-learning
 
+I try to find the shortest path between two points in a 6x6 maze. I used Q-Learning for this task. Here I add 3 different mazes.
+
 ## Outputs
 
 https://user-images.githubusercontent.com/34653977/206921577-6505a52a-d87f-413e-b0d7-6d73b2719351.mp4
