@@ -1,6 +1,7 @@
 from maze10x10 import Maze
 from rl_brain import QLearningTable
 import warnings
+import time
 warnings.filterwarnings('ignore')
 
 
@@ -21,7 +22,10 @@ def update():
             i += 1
             if done:
                 break
-            print(f"count: {i}")
+            #print(f"count: {i}")
+            # time.sleep(10)
+        print(f"Episode: {episode}")
+        # time.sleep(10)
 
     print('game over')
     env.destroy()

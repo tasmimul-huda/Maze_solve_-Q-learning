@@ -3,6 +3,7 @@ import time
 import sys
 import tkinter as tk
 from config import Config10x10
+import random
 
 config = Config10x10()
 width = config.width_in_each_side
@@ -163,12 +164,8 @@ class Maze(tk.Tk, object):
                             hell26_center[1]+width,fill='black')
         
 
-
-
-
-
         # oval
-        oval_center = origin + np.array([UNIT * 9, UNIT * 0])
+        oval_center = origin + np.array([UNIT * 6, UNIT * 5])
         self.oval = self.canvas.create_oval(
             oval_center[0] - width, oval_center[1]-width,
             oval_center[0] + width, oval_center[1] + width,
@@ -198,7 +195,9 @@ class Maze(tk.Tk, object):
 
     def step(self, action):
         s = self.canvas.coords(self.rect)
+        # print(f"state coords: {s}: action: {action}")
         base_action = np.array([0, 0])
+
         if action == 0:   # up
             if s[1] > UNIT:
                 self.canvas.create_rectangle(s,fill='blue')
@@ -274,7 +273,7 @@ def update():
         s = env.reset()
         while True:
             env.render()
-            a = 1
+            a = random.randint(0, 3) #1
             s, r, done = env.step(a)
             if done:
                 break
