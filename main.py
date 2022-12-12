@@ -1,11 +1,11 @@
-from maze6x6 import Maze
+from maze10x10 import Maze
 from rl_brain import QLearningTable
 import warnings
 warnings.filterwarnings('ignore')
 
 
 def update():
-    for episode in range(100):
+    for episode in range(10000):
         observation = env.reset()
         i = 0
 
